@@ -70,7 +70,8 @@ java -version  # Verify Java installation
    ```bash
    export HADOOP_HOME=/usr/local/hadoop
    export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
-   export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+   export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+   export PATH=$JAVA_HOME/bin:$PATH
    ```
 3. Reload the environment:
    ```bash
