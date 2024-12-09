@@ -56,13 +56,14 @@ ENV MODEL_DIR=/home/ec2-user/models
 WORKDIR ${PROG_DIR}
 
 # Copy application files
-COPY wine_quality_predictor.py ${PROG_DIR}/
+COPY wine-predictor.py ${PROG_DIR}/
 COPY TrainingDataset.csv ${PROG_DIR}/
 COPY ValidationDataset.csv ${PROG_DIR}/
+COPY wine-training.py ${PROG_DIR}/
 
 # Set permissions
-RUN chmod +x ${PROG_DIR}/wine_quality_predictor.py && \
+RUN chmod +x ${PROG_DIR}/wine-predictor.py && \
     chmod -R 777 ${MODEL_DIR}
 
 # Command to run the application
-ENTRYPOINT ["python", "wine_quality_predictor.py"]
+ENTRYPOINT ["python", "wine-predictor.py"]
