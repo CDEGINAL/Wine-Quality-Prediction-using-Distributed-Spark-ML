@@ -50,20 +50,27 @@ RUN set -ex && \
     apt-get autoremove -y && \
     apt-get clean
 
-# Set working directory and environment variables
-ENV PROG_DIR=/mlprog
-ENV MODEL_DIR=/home/ec2-user/models
+
+# Set working directory and filenames
+ENV PROG_DIR /mlprog
+ENV TRAIN_SCRIPT wine_train.py
+ENV TEST_SCRIPT wine_test.py
+ENV TRAIN_DATA TrainingDataset.csv
+ENV TEST_DATA ValidationDataset.csv
+
+# Set working directory
 WORKDIR ${PROG_DIR}
 
-# Copy application files
-COPY wine-predictor.py ${PROG_DIR}/
-COPY TrainingDataset.csv ${PROG_DIR}/
-COPY ValidationDataset.csv ${PROG_DIR}/
-COPY wine-training.py ${PROG_DIR}/
+# Copy Python scripts and datasets to the working directory
+ADD ${TRAIN_SCRIPT} .
+ADD ${TEST_SCRIPT} .
+ADD ${TRAIN_DATA} .
+ADD ${TEST_DATA} .
 
-# Set permissions
-RUN chmod +x ${PROG_DIR}/wine-predictor.py && \
-    chmod -R 777 ${MODEL_DIR}
+# Combine training and testing into a single entrypoint
+RUN echo '#!/bin/bash\n' \
+         'spark-submit wine_train.py\n' \
+         'spark-submit wine_test.py\n' > /mlprog/run.sh && chmod +x /mlprog/run.sh
 
-# Command to run the application
-ENTRYPOINT ["python", "wine-predictor.py"]
+# Set the startup executable for Docker
+ENTRYPOINT ["bash", "/mlprog/run.sh"]
