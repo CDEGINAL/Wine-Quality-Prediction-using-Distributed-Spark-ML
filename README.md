@@ -50,7 +50,8 @@ java -version  # Verify Java installation
 2. Configure JAVA environment variables in `~/.bashrc`:
    ```bash
    export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
-export PATH=$JAVA_HOME/bin:$PATH
+   export PATH=$JAVA_HOME/bin:$PATH
+   ```
 ---
 
 3. Reload the environment:
