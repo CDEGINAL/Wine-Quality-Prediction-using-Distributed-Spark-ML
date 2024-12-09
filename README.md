@@ -154,8 +154,6 @@ python3 wine_training.py
    docker run wine-predictor
    ```
 
----<img width="1710" alt="Screenshot 2024-12-08 at 6 22 15 PM" src="https://github.com/user-attachments/assets/e9e81656-e543-4db7-b3f7-2cd42faa71e2">
-
 
 ## **Push Docker Image**
 Push the Docker image to Dockerhub:
