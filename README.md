@@ -154,7 +154,7 @@ spark-submit --master spark://<Master's Private IP>:7077 wine-train.py
    ```
 2. Run the prediction container:
    ```bash
-   docker run wine-predictor
+   docker run wine-predictor .
    ```
 
 
@@ -169,7 +169,7 @@ docker push <dockerhub-username>/wine-predictor:latest
 
 ## **Results**
 ### Docker Build
-The Docker image should build successfully.
+The Docker build successfully.
 <img width="1710" alt="Screenshot 2024-12-08 at 6 05 45 PM" src="https://github.com/user-attachments/assets/602c3e0d-f742-42ff-938f-01ad72980597">
 
 ### Prediction Outputs
