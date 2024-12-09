@@ -1,10 +1,8 @@
-
 from pyspark.sql import SparkSession
 from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.classification import LogisticRegression
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 from pyspark.sql.functions import col
-import os
 
 def create_spark_session():
     """Create Spark session for distributed training"""
@@ -49,9 +47,9 @@ def train_model():
     lr = LogisticRegression(maxIter=10, regParam=0.3, elasticNetParam=0.8)
     model = lr.fit(training_data)
     
-    # Make predictions on validation dataset
-    print("Evaluating model...")
-    predictions = model.transform(validation_data)
+    # Make predictions on training dataset
+    print("Evaluating model on training data...")
+    train_predictions = model.transform(training_data)
     
     # Evaluate the model
     evaluator = MulticlassClassificationEvaluator(
@@ -59,8 +57,19 @@ def train_model():
         predictionCol="prediction", 
         metricName="f1"
     )
-    f1_score = evaluator.evaluate(predictions)
-    print(f"F1 Score on validation data: {f1_score}")
+    f1_score = evaluator.evaluate(train_predictions)
+
+    # Calculate accuracy
+    evaluator = MulticlassClassificationEvaluator(
+        labelCol="label", 
+        predictionCol="prediction", 
+        metricName="accuracy"
+    )
+    accuracy = evaluator.evaluate(train_predictions)
+    
+    # Output the results
+    print("[Train] F1 score =", f1_score)
+    print("[Train] Accuracy =", accuracy)
     
     # Save the model
     print(f"Saving model to {model_save_path}")
