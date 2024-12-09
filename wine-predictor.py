@@ -1,4 +1,3 @@
-# wine_quality_predictor.py
 
 import logging
 from pathlib import Path
