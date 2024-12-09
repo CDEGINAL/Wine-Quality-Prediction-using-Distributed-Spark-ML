@@ -99,10 +99,23 @@ java -version  # Verify Java installation
      ```bash
      start-master.sh
      ```
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/01e2520c-c30b-41c8-8b2e-a2fc837b9c00">
+
+
    - Workers:
      ```bash
      start-slave.sh spark://<master-node-private-ip>:7077
      ```
+worker 1:
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/624595ac-0144-4c8a-80be-3eb9f7b808e1">
+
+worker2:
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/994ea317-dc85-4a90-b10e-343042b6fbd4">
+
+worker3: 
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/e1d92d6f-6ec8-49e1-a23c-ac17b0ffd2ca">
+
+
 
 ---
 
@@ -120,7 +133,8 @@ Run the training script on the master node:
 python3 wine_training.py
 ```
 
----
+---<img width="894" alt="Screenshot 2024-12-09 at 12 12 06 AM" src="https://github.com/user-attachments/assets/d4fdd566-ca89-4460-bbef-556bf6b0505f">
+
 
 ## **Build and Run Docker Container**
 1. Build the Docker image:
@@ -132,7 +146,8 @@ python3 wine_training.py
    docker run wine-predictor
    ```
 
----
+---<img width="1710" alt="Screenshot 2024-12-08 at 6 22 15 PM" src="https://github.com/user-attachments/assets/e9e81656-e543-4db7-b3f7-2cd42faa71e2">
+
 
 ## **Push Docker Image**
 Push the Docker image to Dockerhub:
@@ -140,7 +155,8 @@ Push the Docker image to Dockerhub:
 docker push <dockerhub-username>/wine-predictor:latest
 ```
 
----
+---<img width="1710" alt="Screenshot 2024-12-09 at 12 14 31 AM" src="https://github.com/user-attachments/assets/fe9f2080-d4c8-4d12-9517-2f7b658c3be6">
+
 
 ## **Results**
 ### Docker Build
