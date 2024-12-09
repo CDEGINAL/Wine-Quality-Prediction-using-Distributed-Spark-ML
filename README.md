@@ -11,9 +11,9 @@ This project implements a distributed machine learning system for wine quality p
 ---
 
 ## **Launch EC2 Instances**
-- **Instance Type**: Select an instance type like `t2.large` or `m5.large` for sufficient resources.
+- **Instance Type**: Select an instance type like `t2.micro`.
 - **VPC**: Ensure instances are in the same VPC for network connectivity.
-
+- **AWS EC2 instances** : (4 total: 1 master, 3 workers)
 ---
 
 ## **Environment Setup** (To be performed on all 4 EC2 instances)
