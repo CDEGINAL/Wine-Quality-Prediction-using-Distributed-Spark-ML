@@ -134,14 +134,15 @@ scp -i "your-key.pem" file-to-upload ubuntu@<instance-public-ip>:<remote-path>
 ```
 
 ---
-
 ## **Train the Model**
-Run the training script on the master node:
-```bash
-spark-submit wine_train.py
-```
+Run the Scripts on Spark
 
+Execute wine-train.py:
+```bash
+spark-submit --master spark://<Master's Private IP>:7077 wine-train.py
+```
 ---<img width="894" alt="Screenshot 2024-12-09 at 12 12 06 AM" src="https://github.com/user-attachments/assets/d4fdd566-ca89-4460-bbef-556bf6b0505f">
+
 
 
 ## **Build and Run Docker Container**
