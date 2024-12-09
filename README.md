@@ -40,13 +40,23 @@ ssh -i "your-key.pem" ubuntu@<instance-public-ip>
    ```
 
 ### Install OpenJDK 17
+1.JAVA instalation:
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install openjdk-17-jdk wget unzip -y
 java -version  # Verify Java installation
 ```
 
+2. Configure JAVA environment variables in `~/.bashrc`:
+   ```bash
+   export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
 ---
+
+3. Reload the environment:
+   ```bash
+   source ~/.bashrc
+   ```
 
 ## **Install Hadoop**
 1. Download and extract Hadoop:
@@ -89,17 +99,13 @@ java -version  # Verify Java installation
 
 ---
 
-## **Start Hadoop and Spark**
-1. Start Hadoop on the master node:
-   ```bash
-   start-dfs.sh
-   ```
-2. Start Spark:
+## **Start Spark**
+1. Start Spark:
    - Master:
      ```bash
      start-master.sh
      ```
-<img width="468" alt="image" src="https://github.com/user-attachments/assets/01e2520c-c30b-41c8-8b2e-a2fc837b9c00">
+     <img width="468" alt="image" src="https://github.com/user-attachments/assets/01e2520c-c30b-41c8-8b2e-a2fc837b9c00">
 
 
    - Workers:
