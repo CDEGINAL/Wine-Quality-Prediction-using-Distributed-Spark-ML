@@ -29,7 +29,7 @@ class WineQualityPredictor:
     def create_spark_session(self) -> SparkSession:
         """Create and configure Spark session."""
         return SparkSession.builder \
-            .appName("Wine-predictor") \
+            .appName("WineQualityPredictor") \
             .master("local[*]") \
             .getOrCreate()
 
