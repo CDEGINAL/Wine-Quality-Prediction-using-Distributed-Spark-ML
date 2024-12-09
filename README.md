@@ -145,9 +145,13 @@ docker push <dockerhub-username>/wine-predictor:latest
 ## **Results**
 ### Docker Build
 The Docker image should build successfully.
+<img width="1710" alt="Screenshot 2024-12-08 at 6 05 45 PM" src="https://github.com/user-attachments/assets/602c3e0d-f742-42ff-938f-01ad72980597">
 
 ### Prediction Outputs
 Results will include:
-- **Result Image 1**: 
+- **Result Image 1**:
+- <img width="1702" alt="Screenshot 2024-12-08 at 3 47 24 PM" src="https://github.com/user-attachments/assets/500e8d16-2dad-4fe8-a124-34862faed0cb">
+
 - **Result Image 2**:
----
+---<img width="364" alt="Screenshot 2024-12-08 at 3 47 13 PM" src="https://github.com/user-attachments/assets/2581349b-fb27-47d3-9526-f2c5793c4737">
+
