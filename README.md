@@ -97,6 +97,7 @@ java -version  # Verify Java installation
    ```bash
    <worker-node-1-private-ip>
    <worker-node-2-private-ip>
+   <worker-node-3-private-ip>
    ```
 
 ---
@@ -105,7 +106,8 @@ java -version  # Verify Java installation
 1. Start Spark:
    - Master:
      ```bash
-     start-master.sh
+     ./sbin/start-master.sh
+     ./sbin/start-slaves.sh
      ```
      <img width="468" alt="image" src="https://github.com/user-attachments/assets/01e2520c-c30b-41c8-8b2e-a2fc837b9c00">
 
