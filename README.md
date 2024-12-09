@@ -89,6 +89,8 @@ java -version  # Verify Java installation
    Add:
    ```bash
    export SPARK_MASTER_HOST=<master-node-private-ip>
+   export HADOOP_HOME=/usr/local/hadoop
+   export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
    ```
 2. Configure worker nodes:
    Edit `conf/slaves` on the master node:
