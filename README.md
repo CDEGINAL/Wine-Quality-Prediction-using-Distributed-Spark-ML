@@ -15,6 +15,7 @@ This project implements a distributed machine learning system for wine quality p
 - **VPC**: Ensure instances are in the same VPC for network connectivity.
 - **AWS EC2 instances** : (4 total: 1 master, 3 workers)
 ---
+<img width="1710" alt="Screenshot 2024-12-10 at 11 48 49 AM" src="https://github.com/user-attachments/assets/0bb11b06-f36d-4aa9-9b14-29c74d66b805">
 
 ## **Environment Setup** (To be performed on all 4 EC2 instances)
 
